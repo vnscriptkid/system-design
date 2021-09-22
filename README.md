@@ -1,31 +1,30 @@
 # system-design
 
+## 1. Introduction
 <img src="https://user-images.githubusercontent.com/28957748/134184667-4269c336-204c-48a2-abbf-d015b0216413.png" height="300px" />
 
-1. Introduction
-
-3. What Are Design Fundamentals?
+## 2. What Are Design Fundamentals?
 - DFs are building blocks to solve Design Interview questions
 - Just like you need to know Data Structure to solve Coding interview questions
 
-5. Client—Server Model
+## 3. Client—Server Model
 - Flow when user enters url on browser and press enter:
   - A req is sent to DNS server, a resolved IP address corresonding to address is sent back to user
   - User uses that IP address as a unique identifier of one entity on the internet, send a message to server (including `src IP` and `dest IP`)
   - Server receives req from client, look at the req to determine what user needs before sending back the resource to `src IP`
 
-7. Network Protocols
+## 4. Network Protocols
 - HTTP (Hyper Text Transfer Protocol): 
 - TCP (Transmission Control Protocol): top of IP, reliable (come in order + error checking), 3-way handshake before actual transmission
 - IP (Internet Protocol): used for routing purposes, header contains `src IP` && `dest IP`, limited size, no order
 
-9. Storage
+## 5. Storage
 - Database: stores data, supports 2 main operations: WRITE (Create, Update, Delete) && READ
 - 2 types:
   - In-memory: Fast retrieval, not persist (after shutdown)
   - Disk: Slow, do persist
 
-11. Latency And Throughput
+## 6. Latency And Throughput
 - Latency: How long it takes for data to traverse between systems.
   - Specific systems may requires higher latency: online games
 - Throughput: How much work can be handled at a time
