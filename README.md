@@ -34,8 +34,44 @@
   - Pay more $$$
   - Add more servers  
 
-13. Availability
-14. Caching
+## 7. Availability
+- What is availability? Resistant to failure or fault-tolerant (server shutdown || db shutdown || ...)
+- Why is it important? You can lose customers if they can not access the service
+- How to measure availability? Uptime / Total Time (1 Year) ~ 99.999%
+- High Availability: More Nines
+- SLA/SLO (Service Level Agreement/Objective): 
+  - The Service Provider's promise about service's uptime.
+  - They will take penalty if they fail to keep up with their words.
+- Evaluating a system's availability, must consider all services, what is the core service.
+- How to increase Availability? Redundancy
+  - Add more servers to avoid single point of failure, having LB to coordinate traffic
+  - Add more LBs
+- 2 types of Redundancy:
+  - Passive: having multiple machines working at the same time, when one goes down, others will take care
+  - Active: having one machine working at one time, when it goes down, one machine from the pool takes over
+
+## 8. Caching
+- 🥅 Goal: Reduce latency
+- Definition: Stores data in a place different from the original one. Only cache data to be read.
+- Places to cache:
+  - FE: static data, fetch once
+  - BE: expensive computations, frequent calls to DB
+  - DB: long-running queries that data does change frequently
+- 2 types:
+  - Write-through: Write to both cache and DB, takes time but high-consistent
+  - Write-back: Write to cache only, db will be updated later (intervals), high risk of losing data before db able to sync data
+- What types to choose: Depends on the resource and how important it is that resource is up-to-date
+  - Comment on youtube: Requires high-accuracy
+  - View Count: It's okay be stale for certain amount of time
+- Stale data:
+  - One that is out-of-date (in cache), that is not in sync with latest one in db
+  - Solution: Invalidate
+- Eviction policies: We don't want data to be in cache forever
+  - LRU: Take the least recently used out
+  - LFU: Take the least frequently used out
+  - LIFO
+  - FIFO
+
 15. Proxies
 16. Load Balancers
 17. Hashing
