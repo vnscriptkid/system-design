@@ -72,20 +72,41 @@
   - LIFO
   - FIFO
 
-15. Proxies
-16. Load Balancers
-17. Hashing
-18. Relational Databases
-19. Key-Value Stores
-20. Specialized Storage Paradigms
-21. Replication And Sharding
-22. Leader Election
-23. Peer-To-Peer Networks
-24. Polling And Streaming
-25. Configuration
-26. Rate Limiting
-27. Logging And Monitoring
-28. Publish/Subscribe Pattern
-29. MapReduce
-30. Security And HTTPS
-31. API Design
+## 9. Proxies
+## 10. Load Balancers
+- Context: 1 server has limited throughput
+- Scaling:
+  - Vertical
+  - Horizontal: Add more servers => need for a LB
+- What is a LB:
+  - Server or reverse proxy (acts on behalf of server)
+  - Balance reqs between servers
+- Types:
+  - Hardware: Dedicated machine
+  - Software (our focus)
+- Server selection strategies:
+  - Random: Naive, inconsistent, imbalance
+  - Round-Robin: Select one by one alternately
+  - Round-Robin Weighted: Put a weight on prioritized server (powerful one) so more traffic is directed for that one
+  - Performance-based: Frequently do health check amongst servers, select one highly-performant
+  - IP-based:  
+    - Hash ip to get an unique number x
+    - x % numOfServers => index of server
+    - Pros: 1 ip / 1 server, reqs from 1 user comes back to same server, so never miss the cache
+    - Cons: In case we add or remove servers, mapping will change
+
+18. Hashing
+19. Relational Databases
+20. Key-Value Stores
+21. Specialized Storage Paradigms
+22. Replication And Sharding
+23. Leader Election
+24. Peer-To-Peer Networks
+25. Polling And Streaming
+26. Configuration
+27. Rate Limiting
+28. Logging And Monitoring
+29. Publish/Subscribe Pattern
+30. MapReduce
+31. Security And HTTPS
+32. API Design
