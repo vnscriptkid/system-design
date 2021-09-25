@@ -94,8 +94,16 @@
     - x % numOfServers => index of server
     - Pros: 1 ip / 1 server, reqs from 1 user comes back to same server, so never miss the cache
     - Cons: In case we add or remove servers, mapping will change
+- Can use multiple selection strategies for one system.
 
-18. Hashing
+## 11. Hashing
+- Context: Server selection algorithm of LB (ip based)
+- Problem with ordinary ip-based:
+  - IP % numOfServers => index of server
+  - As numberOfServers changes, the mapping between IP and Server will also change
+#### :one: Consistent Hashing
+#### :two: Rendezvous Hashing
+
 19. Relational Databases
 20. Key-Value Stores
 21. Specialized Storage Paradigms
