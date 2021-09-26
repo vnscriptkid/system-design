@@ -110,6 +110,7 @@
 ###### 🚀 My Impl: https://github.com/vnscriptkid/consistent-hashing
 
 #### :two: Rendezvous Hashing
+- Idea: Client_A_IP <=> [ 👉 __ServerA__, ServerB, ServerC ] (First Choice)
 
 19. Relational Databases
 20. Key-Value Stores
