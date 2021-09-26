@@ -102,6 +102,8 @@
   - IP % numOfServers => index of server
   - As numberOfServers changes, the mapping between IP and Server will also change
 #### :one: Consistent Hashing
+<img height="300px" src="https://vitalflux.com/wp-content/uploads/2017/10/Screen-Shot-2017-10-10-at-9.01.36-AM.png" />
+
 #### :two: Rendezvous Hashing
 
 19. Relational Databases
