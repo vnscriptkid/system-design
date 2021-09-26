@@ -103,8 +103,12 @@
   - As numberOfServers changes, the mapping between IP and Server will also change
 #### :one: Consistent Hashing
 <img height="200px" src="https://vitalflux.com/wp-content/uploads/2017/10/Screen-Shot-2017-10-10-at-9.01.36-AM.png" />
+
 - As numberOfServers changes (add servers || existing one goes down) most of mappings will not change
 - One server gets lot of load? Virtual servers
+
+###### 🚀 My Impl: https://github.com/vnscriptkid/consistent-hashing
+
 #### :two: Rendezvous Hashing
 
 19. Relational Databases
