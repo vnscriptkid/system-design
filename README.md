@@ -130,6 +130,11 @@
       - trasactions run in isolation from each other at the same time
       - but is sequential at the end
     - Durability: once transaction is committed, can't reverse (permanent effect)
+- Indexing:
+  - Use auxiliary table to optimize read queries
+  - Cons: Slow down write queries (must write to 2 tables)
+
+## 13. Key-Value Stores
 
 20. Key-Value Stores
 21. Specialized Storage Paradigms
