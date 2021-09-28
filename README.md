@@ -73,6 +73,12 @@
   - FIFO
 
 ## 9. Proxies
+- 2 types
+  - Reverse Proxy (nginx)
+    - acts on behalf of server, DNS resolves to IP of reverse proxy
+    - features: filters reqs, logging, caching html, Load Balancing
+  - Forward Proxy: acts on behalf of client, like VPN
+
 ## 10. Load Balancers
 - Context: 1 server has limited throughput
 - Scaling:
@@ -112,7 +118,19 @@
 #### :two: Rendezvous Hashing
 - Idea: Client_A_IP <=> [ 👉 __ServerA__, ServerB, ServerC ] (First Choice)
 
-19. Relational Databases
+## 12. Relational Databases
+- Definition: table (row: data record, col: props), structured (adding data to db must comply with schema)
+- Powerful queries with SQL
+- ACID
+    - Atomicity (transaction): transfer money = (subtract from A'account, add to B's account)
+      - all succeed
+      - all fail
+    - Consistency: No stale data (>< eventual consistency)
+    - Isolation (locking):
+      - trasactions run in isolation from each other at the same time
+      - but is sequential at the end
+    - Durability: once transaction is committed, can't reverse (permanent effect)
+
 20. Key-Value Stores
 21. Specialized Storage Paradigms
 22. Replication And Sharding
