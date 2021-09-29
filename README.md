@@ -135,6 +135,39 @@
   - Cons: Slow down write queries (must write to 2 tables)
 
 ## 13. Key-Value Stores
+- Characteristics: non-relational, no sql
+- Pros:
+  - Flexible (no structure)
+  - Simple
+  - Fast (hashing)
+- Use cases:
+  - Caching
+  - Dynamic config
+- Variations:
+  - Write to: disk || ram
+  - consistency: strong || eventual
+
+## 14. Replication
+- UC1: Increase availability
+  - Main db handles queries, update sync to replicas
+  - In case main db goes down, replicas take over
+- UC2: Increase latency
+  - Have dbs at different regions, storing data for users coming from there
+  - Users from region A might get replicated to region B's db asynchrously (eventual consistency - can't see immediate results)
+- UC3: Increase throughput
+  - Horizontal scale: Clone more dbs (replicas) and have them all handle traffic
+  - Cons: inefficient in case of huge db
+
+## 15. Sharding
+- Idea: Split db
+- Pros: No duplication, increase throughput
+- How to split:
+  - Name start with _
+  - Users by regions
+  - Consistent hashing
+- Determine which shard to go:
+  - In server
+  - In reverse-proxy
 
 20. Key-Value Stores
 21. Specialized Storage Paradigms
