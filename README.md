@@ -169,10 +169,18 @@
   - In server
   - In reverse-proxy
 
-20. Key-Value Stores
-21. Specialized Storage Paradigms
-22. Replication And Sharding
-23. Leader Election
+## 16. Leader Election
+- Context: Business logic is executed once amongst multiple servers
+- Example: Recurring payment
+  - Flow: (1) 3rd service charge user's money (2) 3rd service sends a message to update db
+  - We don't want to expose db for 3rd service => set up a server to listen for message
+  - Scaling quesiton: What if it goes down => set up standby servers that can take over anytime and do business logic
+  - There must be a way to communicate between servers: (1) who is leader now, (2) who will be leader if current leader goes down
+  - Leader election: consensus algorithm
+- Tools
+  - Zoo Keeper (Uber)
+  - Etcd: key-value store, high availability, strong consistency
+
 24. Peer-To-Peer Networks
 25. Polling And Streaming
 26. Configuration
