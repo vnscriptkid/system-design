@@ -181,7 +181,15 @@
   - Zoo Keeper (Uber)
   - Etcd: key-value store, high availability, strong consistency
 
-24. Peer-To-Peer Networks
+## 17. Peer-To-Peer Networks
+- Context: Sending huge files to a lot of clients
+- Problem: Low throughput in general, as clients have to wait for their turns to be served
+- Solution: 
+  - Break file into small chunks 
+  - Consider each client as peer, can send and receive chunks from others, not just from server
+  - Have a tracker to coordinate traffic: decide who should talk to who
+  - Use DHT: Distributed Hash Table
+
 25. Polling And Streaming
 26. Configuration
 27. Rate Limiting
