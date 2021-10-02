@@ -190,8 +190,25 @@
   - Have a tracker to coordinate traffic: decide who should talk to who
   - Use DHT: Distributed Hash Table
 
-25. Polling And Streaming
-26. Configuration
+## 18. Polling And Streaming
+- Same: Data needs to be updated in a automatic way
+- Polling:
+  - Client proactively sends reqs to server after certain interval
+  - Cons: Data may become stale
+  - Solution: Reduce interval time => Cons: Load overhead on server side
+  - Use case: Don't need data to be updated regularly
+- Streaming:
+  - Server proactively push messages to client on a long-lived connection
+  - Data is always updated
+  - Use case: Need for realtime data like trading app, chat app
+
+## 19. Configuration
+- Def: Set of constants
+- Formats: json, yaml
+- Types
+  - Static: Any change config requires new code deployment
+  - Dynamic: Quick impact
+
 27. Rate Limiting
 28. Logging And Monitoring
 29. Publish/Subscribe Pattern
