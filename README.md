@@ -209,8 +209,23 @@
   - Static: Any change config requires new code deployment
   - Dynamic: Quick impact
 
-27. Rate Limiting
-28. Logging And Monitoring
+## 20. Rate Limiting
+- Def: A threshold of how many operations can be executed over a certain period of time (exp: 2 reqs / 10s)
+- Why? DoS protection (not DDoS), reduce overhead for server
+- Limit based on factors:
+  - User
+  - IP
+  - Regions
+- Scaling:
+  - Put `Rate Limiting` service on a separate machine, using Redis to store data.
+
+## 21. Logging And Monitoring
+- Why: Reproduce issue, debug
+- Formats: json, syslog
+- What to logs: error, reqs
+- Features: Visibility, logs -> metrics -> insights, Auto alerts when err reaches threshold
+- Variations: ggStackDriver, time series database
+
 29. Publish/Subscribe Pattern
 30. MapReduce
 31. Security And HTTPS
