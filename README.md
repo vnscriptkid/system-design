@@ -226,7 +226,19 @@
 - Features: Visibility, logs -> metrics -> insights, Auto alerts when err reaches threshold
 - Variations: ggStackDriver, time series database
 
-29. Publish/Subscribe Pattern
+## 22. Publish/Subscribe Pattern
+- Context: Streaming
+- 4 entities:
+  - Subscribers: Clients
+  - Publishers: Servers
+  - Topics (Channels): intermediary over which publishers push messages
+  - Messages:
+    - Idempotent ops: data could be sent > 1 times => in case publishers don't receive ack msg
+- Filtering
+  - Topic-based
+  - Content-based: Publishers decide whether or not to deliver messages based on message's content
+- Variations: google cloud pubsub, Apache kafka
+
 30. MapReduce
 31. Security And HTTPS
 32. API Design
