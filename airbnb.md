@@ -6,3 +6,4 @@ https://www.youtube.com/watch?v=YyOXt2MEkv4&t=206s
 ## Notes:
 - Elastic Search: fuzzy (take care of miss spell, typos)
 - Cassandra: huge amount of reads and writes
+- where to place Redis cluster: high-throughput point (searching for rooms)
